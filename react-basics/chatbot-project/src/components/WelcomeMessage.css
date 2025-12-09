@@ -1,0 +1,9 @@
+      .welcome-message-class {
+        color: gray;
+        text-align: center;
+      }
+
+      .loading-img {
+        height: 40px;
+        margin: -15px;
+      }

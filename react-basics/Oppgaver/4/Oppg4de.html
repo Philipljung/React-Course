@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <style>
+      .inputContainerClass {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .inputClass {
+        width: 200px;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border-width: 1px;
+      }
+
+      .buttonContainerClass {
+        display: flex;
+        margin-top: 25px;     
+      }
+
+      .buttonClass {
+        background-color: rgb(0, 123, 255);
+        border: none;
+        padding: 10px 15px;
+        color: white;
+        margin-right: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .passwordContainerClass {
+        display: flex;
+        align-items: center;
+      }
+
+      .passwordButtonClass {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function TextElement () {
+        return (
+          <div>
+            <p>Hello, welcome to my website</p>
+          </div>
+        )
+      }
+
+      function InputElement () {
+        const [showPassword, setShowPassword] = React.useState(false);
+
+        function handleShowPassword () {
+          setShowPassword(!showPassword);
+        }
+
+        return (
+          <div className="inputContainerClass">
+            <input
+            className="inputClass"
+            placeholder="Email"
+            />
+            <div className="passwordContainerClass">
+              <input
+                className="inputClass"
+                placeholder="Password"
+                type={showPassword? 'text' : 'password'}
+              />
+              <button
+                className="passwordButtonClass"
+                onClick={handleShowPassword}
+              >{showPassword ? 'Hide' : 'Show'}</button>
+            </div>
+          </div>
+        )
+      }
+
+      function ButtonElement () {
+        return (
+          <div className="buttonContainerClass">
+            <button
+            className="buttonClass"
+            >Login</button>
+            <button
+            className="buttonClass"
+            >Sign up</button>
+          </div>
+        )
+      }
+
+        function App() {
+          return (
+            <>
+            <TextElement />
+            <InputElement />
+            <ButtonElement />
+          </>
+          )
+        }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

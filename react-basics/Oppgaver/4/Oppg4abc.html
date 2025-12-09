@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <style>
+      .button-class-green {
+        background-color: rgb(25, 135, 84);
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-family: Arial;
+        cursor: pointer;
+      }
+      .button-class-red {
+        background-color: rgb(208, 63, 63);
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-family: Arial;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+        function ButtonElement () {
+          const [isButtonOn, setIsButtonOn] = React.useState(true);
+
+          function clickButton () {
+            setIsButtonOn(!isButtonOn);
+          }
+
+
+          return (
+            <button
+            className={isButtonOn ? 'button-class-green' : 'button-class-red'}
+            onClick={clickButton}
+            >{isButtonOn 
+              ? 'ON' 
+              : 'OFF'
+            }</button>
+          )
+        }
+        
+        function App() {
+
+          return (
+            <ButtonElement />
+          )
+
+        }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

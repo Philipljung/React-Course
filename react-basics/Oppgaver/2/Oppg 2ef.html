@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function ProductDetails ({ product, price }) {
+          return(
+          <div>
+            <h1>{product}</h1>
+            <p>Price: {price}</p>
+            <button>Add to cart</button>
+          </div>
+          )
+        }
+
+
+        function App() {
+          return (
+            <>
+              <ProductDetails 
+              product="Socks"
+              price ="50 USD"
+              />
+              <ProductDetails 
+              product="Tennis Balls"
+              price ="75 USD"
+              />
+              <ProductDetails 
+              product="T Shirt"
+              price ="35 USD"
+              />
+            </>
+          );
+        }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

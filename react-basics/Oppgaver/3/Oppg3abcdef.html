@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+      
+      function CountComponent ({ count, setCount }) {
+        // const [count, setCount] = React.useState(0);
+
+          function increaseCount () {
+            setCount( count + 1)
+          }
+
+          return (
+              <>
+                <button
+                onClick={increaseCount}
+                >Clicked {count} {count === 1 ? 'time' : 'times'}</button>
+              </>
+          );
+      }
+        function ResetButton ({ count, setCount }) {
+
+            function resetCount () {
+                setCount(0);
+            }
+
+                return (
+                  <button
+                  onClick={resetCount}
+                  >Reset Count</button>
+                )
+        }
+
+        function App() {
+          const [count, setCount] = React.useState(0);
+
+          
+          return (
+            <>
+              <CountComponent 
+              count={count}
+              setCount={setCount}
+              />
+              <CountComponent 
+              count={count}
+              setCount={setCount}
+              />
+              <ResetButton 
+              count={count}
+              setCount={setCount}
+              />
+            </>
+          )
+        }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
