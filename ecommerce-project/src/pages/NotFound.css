@@ -1,0 +1,10 @@
+.ErrorMsgDiv {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.ErrorMsg {
+    justify-content: center;
+    align-self: center;
+}
