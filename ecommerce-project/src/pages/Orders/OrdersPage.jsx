@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect, Fragment } from 'react';
 import { Header } from '../../components/Header.jsx';
 import "./OrdersPage.css";
-import BuyAgainIcon from '../assets/images/icons/buy-again.png';
+import BuyAgainIcon from '../../assets/images/icons/buy-again.png';
 import { formatMoney } from '../../utils/money.js';
 
 export function OrdersPage({ cart }) {
@@ -11,7 +11,7 @@ export function OrdersPage({ cart }) {
 
     useEffect(() => {
         axios.get('/api/orders?expand=products')
-            .then((response) => {
+            .then((response) => {                         
                 setOrders(response.data);
             })
     }, [])
