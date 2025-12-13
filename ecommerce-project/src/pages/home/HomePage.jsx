@@ -4,7 +4,7 @@ import { Header } from '../../components/Header';
 import { ProductsGrid } from './ProductsGrid';
 import "./HomePage.css";
 
-export function HomePage( {cart} ) {
+export function HomePage({ cart }) {
     const [products, setProducts] = useState([]);
     
 
