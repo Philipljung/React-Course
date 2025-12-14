@@ -1,10 +1,12 @@
 import { Header } from '../components/Header';
 import "./NotFound.css";
 
-export function NotFound () {
+export function NotFound ({ cart }) {
     return (
         <>
-            <Header />
+            <Header 
+            cart={cart}
+            />
             <div className="ErrorMsgDiv">
                 <p
                 className="ErrorMsg"
