@@ -23,6 +23,17 @@ export function CartItemDetails({ cartItem, deleteCartItem, loadCart }) {
         setQuantity(event.target.value);
     }
 
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            updateQty();
+        } else if (event.key === 'Escape') {
+            setQuantity(cartItem.quantity);
+            setUpdate(false);
+        }
+    }
+
+
     return (
         <>
             <img className="product-image"
@@ -46,7 +57,9 @@ export function CartItemDetails({ cartItem, deleteCartItem, loadCart }) {
                                     type="text"
                                     style={{
                                         width: 30
-                                    }} />
+                                    }}
+                                    onKeyDown={handleKeyDown}
+                                     />
                                 : ` ${cartItem.quantity}`
                             }</span>
                     </span>
