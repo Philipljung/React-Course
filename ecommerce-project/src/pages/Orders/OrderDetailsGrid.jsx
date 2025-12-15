@@ -16,7 +16,7 @@ export function OrderDetailsGrid({ order, loadCart, }) {
                     });
                     await loadCart();
                 }
-                
+
                 return (
                     <Fragment key={orderProduct.product.id}>
                         <div className="product-image-container">
