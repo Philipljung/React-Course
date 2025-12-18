@@ -14,9 +14,10 @@ export function Product({ product, loadCart }) {
         await loadCart();
         
         await setShowAdded(true);
+
         setTimeout(() => {
             setShowAdded(false);
-        }, 2000)
+        }, 2000);
     }
 
     const selectQuantity = (event) => {
